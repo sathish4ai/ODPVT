@@ -15,7 +15,12 @@ The main script, main.py, has a variety of parameters available that can be chan
 PyTorch training code and pretrained models for **ODPVT** .
 We replace the full complex hand-crafted object detection pipeline with a Transformer, and match Faster R-CNN with a ResNet-50, obtaining **39 AP** on COCO using half the computation power (FLOPs) and the same number of parameters. 
 
-![ODPVT](.github/DETR.png)
+## High Level Architecture of ODPVT
+<img src="images/ODPVT High level Architecture.png" alt="image" style="zoom:60%;" />
+
+## Architecture of Pooled Vision Transformer
+<img src="images/ODPVT Pooled Vision Transformer.png" alt="image" style="zoom:60%;" />
+
 
 **What it is**. Unlike traditional computer vision techniques, ODPVT approaches object detection as a direct set prediction problem. It consists of a set-based global loss, which forces unique predictions via bipartite matching, and a POOLED Transformer encoder-decoder architecture. 
 Given a fixed small set of learned object queries, ODPVT reasons about the relations of the objects and the global image context to directly output the final set of predictions in parallel. Due to this parallel nature, DETR is very fast and efficient.
